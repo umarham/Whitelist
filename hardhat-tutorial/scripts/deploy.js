@@ -1,19 +1,17 @@
-const { ethers }  = require("hardhat");
+const { ethers } = require("hardhat");
 
 async function main() {
+
   const whitelistContract = await ethers.getContractFactory("Whitelist");
 
+  // here we deploy the contract
   const deployedWhitelistContract = await whitelistContract.deploy(10);
-  
-<<<<<<< HEAD
-=======
 
->>>>>>> 89bd03673eb50481a2e74a646a1948cf8d593ddd
-  console.log("Whitelist Contract Address:",deployedWhitelistContract.address);
-
-
+  // print the address of the deployed contract
+  console.log("Whitelist Contract Address:", deployedWhitelistContract.address);
 }
 
+// Call the main function and catch if there is any error
 main()
   .then(() => process.exit(0))
   .catch((error) => {
